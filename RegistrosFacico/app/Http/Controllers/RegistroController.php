@@ -20,7 +20,7 @@ class RegistroController extends Controller
             'servicio' => 'required',
             'numero_equipo' => 'nullable',
             'licenciaturas' => 'required',
-            'usuario' => 'required', // Corregí 'usuarios' a 'usuario'
+            'usuario' => 'required', 
             'quejas_sugerencias' => 'nullable',
         ]);
 
@@ -31,7 +31,7 @@ class RegistroController extends Controller
                 'servicio' => $request->servicio,
                 'numero_equipo' => $request->numero_equipo, 
                 'licenciaturas' => $request->licenciaturas,
-                'usuarios' => $request->usuario, // Corregí 'usuarios' a 'usuario'
+                'usuario' => $request->usuario, 
                 'quejas_sugerencias' => $request->quejas_sugerencias,
             ]);
 

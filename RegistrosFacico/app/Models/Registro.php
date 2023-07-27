@@ -15,7 +15,7 @@ class Registro extends Model
         'servicio',
         'numero_equipo', 
         'licenciaturas',
-        'usuarios',
+        'usuario',
         'quejas_sugerencias',
     ];
 }

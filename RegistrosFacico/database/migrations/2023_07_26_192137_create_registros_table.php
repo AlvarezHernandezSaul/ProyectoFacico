@@ -15,7 +15,7 @@ class CreateRegistrosTable extends Migration
         $table->string('servicio');
         $table->string('numero_equipo')->nullable(); // Establecer como nullable
         $table->string('licenciaturas');
-        $table->string('usuarios');
+        $table->string('usuario');
         $table->string('quejas_sugerencias')->nullable(); // Establecer como nullable
         $table->timestamps();
     });
