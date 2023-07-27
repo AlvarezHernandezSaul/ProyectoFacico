@@ -14,15 +14,16 @@
     <nav class="container-fluid" style="padding: 0;">
         <center>
             <img src="{{ asset('img/logouaem.png') }}" alt="uaem">
-            @include('layouts.checking')
-
         </center>
     </nav>
 </header>
 <!-- END HEADER DESKTOP-->
+
+<div class="linea"> </div>
+@include('layouts.checking')
 <div class="linea"></div>
     <h2>Home, renderear tablas aqui</h2>
-<div class="linea"> </div>
+
 <!-- footer -->
 <footer class="mt-auto">
     <div class="row">

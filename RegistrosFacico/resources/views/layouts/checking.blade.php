@@ -9,7 +9,7 @@
     @if(auth()->check())
 
     <div class="d-flex justify-content-between">
-        <a class="text-start fs-4 text-white">Bienvenid@  <b>{{ auth()->user()->name }} </b> </a>
+        <a class="text-start fs-4 text-dark">Bienvenid@  <b>{{ auth()->user()->name }} </b> </a>
         <div class="text-end">
             <a class="btn btn-danger" href="{{ route('login.destroy') }}">Cerrar Sesión</a>
         </div>
