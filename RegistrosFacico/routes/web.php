@@ -14,6 +14,7 @@ Route::post('/registro', [RegistroController::class, 'store'])->name('guardar.da
 
 Route::get('/registro', function () { return view('registro'); })->name('registroreg');
 
+
 Route::middleware(['auth'])->group(function () { Route::get('/home', function () { return view('admin.home'); }); });
 
 

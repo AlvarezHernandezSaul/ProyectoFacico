@@ -42,10 +42,10 @@ class RegistroController extends Controller
                 'quejas_sugerencias' => $request->quejas_sugerencias,
             ]);
 
-            return redirect()->route('registro')->with('success', 'Los datos se han guardado correctamente.');
+            return redirect()->route('registroreg')->with('success', 'Los datos se han guardado correctamente.');
         } catch (\Exception $e) {
             $errorMessage = 'Ha ocurrido un error al guardar los datos. Detalles: ' . $e->getMessage();
-            return redirect()->route('registro')->with('error', $errorMessage);
+            return redirect()->route('registroreg')->with('error', $errorMessage);
         }
         
     }

@@ -24,7 +24,7 @@
 <div class="linea"></div>
 <br><br>
 
-<div class="container-fluid">
+<div class="container">
     
     <div>
     <center>
@@ -36,7 +36,7 @@
     <table class="table table-borderless ">
         	<thead>
             		<tr>
-                		<th>Id</th>
+                		
                 		<th>Nombre</th>
                 		<th>No. de Cuenta</th>
                 		<th>Servicio</th>
@@ -50,7 +50,7 @@
         	<tbody>
             	@foreach( $registro as $reg)
             		<tr>
-                		<td>{{ $reg->id }}</td>
+                		
                 		<td>{{ $reg->nombre }}</td>
                 		<td>{{ $reg->cuenta }}</td>
                 		<td>{{ $reg->servicio }}</td>
