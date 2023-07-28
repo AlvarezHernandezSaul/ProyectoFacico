@@ -12,7 +12,7 @@ Route::get('/registro', [RegistroController::class, 'create'])->name('registro')
 
 Route::post('/registro', [RegistroController::class, 'store'])->name('guardar.datos');
 
-Route::get('/registro', function () { return view('registro'); })->name('registro');
+Route::get('/registro', function () { return view('registro'); })->name('registroreg');
 
 Route::middleware(['auth'])->group(function () { Route::get('/home', function () { return view('admin.home'); }); });
 
@@ -32,4 +32,7 @@ Route::post('/login', [SessionsController::class, 'store'])->middleware('guest')
 Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth')->name('login.destroy');
 
 
+// ---------
+Route::get('/home',[RegistroController::class, 'index'])->name('registro');
+// ---------
 

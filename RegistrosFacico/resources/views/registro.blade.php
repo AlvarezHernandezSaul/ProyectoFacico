@@ -55,6 +55,7 @@
                   <option value="Escaneo">Escaneo</option>
                 </select>
                 <div id="n equipo" style="display: none;">
+                <br>
                     <label for="NumeroEquipo">Ingrese el número de equipo:</label>
                     <input style="border-radius: 4px; padding: 5px;" type="text" id="numero_equipo" name="numero_equipo">
                   </div>

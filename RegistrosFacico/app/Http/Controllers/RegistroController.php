@@ -7,6 +7,13 @@ use App\Models\Registro;
 
 class RegistroController extends Controller
 {
+    public function index()
+    {   
+        $registro=Registro::all();
+        return view('admin.home', compact('registro'));
+
+    }
+
     public function create()
     {
         return view('registro');

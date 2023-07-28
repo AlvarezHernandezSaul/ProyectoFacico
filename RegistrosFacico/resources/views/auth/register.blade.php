@@ -21,7 +21,7 @@
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
-                <p><a class="link-opacity-100" href="{{ route('login.index') }}">Atras</a></p>
+                <p><a class="btn text-white mt-2 mt-md-0" href="{{route('login.index')}}" style="background-color: #2d5135;">Atras</a></p>
 
                 <h1 class="container fs-4 fw-bold text-center">Registrate</h1>
 
