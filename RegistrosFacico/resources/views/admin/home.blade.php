@@ -18,10 +18,11 @@
     </nav>
 </header>
 <!-- END HEADER DESKTOP-->
-
+<div>
 <div class="linea"> </div>
 @include('layouts.checking')
 <div class="linea"></div>
+</div>
 <br><br>
 
 <div class="container">
