@@ -27,20 +27,19 @@
 
 <div class="container">
     
-    <div>
-        <div class="text-end">
-            <a href="{{ route('report.generate') }}" style="display: inline-block; width: 1cm; height: 2cm; text-align: center; line-height: 2cm; font-size: 2cm; text-decoration: none;" title="Generar Excel">
-                <i class="fa-solid fa-file-excel fa-2xl" style="color: #0b5014;"></i>
-              </a>
-              
-         </div>
-     <center>
-    <h2>Registros de uso de salas de computo FaCiCo</h2>
-    </center>
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="text-center">
+            <h2>Registros de uso de salas de computo FaCiCo</h2>
+        </div>
+        <a href="{{ route('report.generate') }}" style="display: inline-block; width: 0.5cm; height: 1cm; text-align: center; line-height: 1cm; font-size: 1cm; text-decoration: none;" title="Generar Excel">
+            <i class="fa-solid fa-file-excel fa-2x" style="color: #0b5014;"></i>
+        </a>
     </div>
+    
+    
     <br><br>
     <!-- tabla -->
-    <table class="table table-borderless ">
+    <table class="table table-bordered border-dark" >
         	<thead>
             		<tr>
                 		
