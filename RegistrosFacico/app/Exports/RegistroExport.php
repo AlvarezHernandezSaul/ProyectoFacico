@@ -38,9 +38,39 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     }
 
     public function styles(Worksheet $sheet)
-    {
-        return [
-            1 => ['font' => ['bold' => true]],
-        ];
-    }
+{
+    $lastRow = $this->registros->count() + 1;
+    $tableRange = 'A1:H' . $lastRow;
+
+    $styleArray = [
+        'borders' => [
+            'allBorders' => [
+                'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                'color' => ['argb' => '000000'],
+            ],
+        ],
+    ];
+
+    // Set the background color for the headers (first row)
+    $headerStyle = [
+        'fill' => [
+            'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+            'startColor' => [
+                'argb' => '545454', // Light gray color code
+            ],
+        ],
+        'font' => [
+            'bold' => true,
+            'color' => ['argb' => 'FFFFFF'], // Font color will be white (FFFFFF)
+        ],
+    ];
+
+    $sheet->getStyle('A1:H1')->applyFromArray($headerStyle); // Apply the style to the headers
+    $sheet->getStyle($tableRange)->applyFromArray($styleArray); // Apply borders
+
+    return [
+        1 => ['font' => ['bold' => true]],
+    ];
+}
+
 }
