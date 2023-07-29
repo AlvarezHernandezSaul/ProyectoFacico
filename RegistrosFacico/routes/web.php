@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\CustomReportController;
 
 
 Route::get('/', function () { return view('registro'); });
@@ -37,3 +38,4 @@ Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth'
 Route::get('/home',[RegistroController::class, 'index'])->name('registro');
 // ---------
 
+Route::get('/generar-reporte', [CustomReportController::class, 'generate'])->name('report.generate');
