@@ -7,6 +7,8 @@
     <script src="{{asset('js/jquery-3.3.1.js') }} "> </script>
     <link href="{{ asset('js/bootstrap.min.css') }}" rel="stylesheet" href="">
     <link rel="icon" type="image/x-icon" href="{{ asset('img/logouaem.png') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('fonts/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
     
 
