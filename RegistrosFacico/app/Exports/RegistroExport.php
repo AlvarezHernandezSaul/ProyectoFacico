@@ -56,7 +56,7 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
         'fill' => [
             'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
             'startColor' => [
-                'argb' => '545454', // Light gray color code
+                'argb' => '545454', // Gray color code
             ],
         ],
         'font' => [
