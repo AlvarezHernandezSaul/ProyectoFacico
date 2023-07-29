@@ -39,9 +39,9 @@
             		<tr>
                 		
                 		<th>Nombre</th>
-                		<th>No. de Cuenta</th>
+                		<th>No. de cuenta</th>
                 		<th>Servicio</th>
-                		<th>no de equipo</th>
+                		<th>No. de equipo</th>
                 		<th>Licenciatura</th>
                 		<th>Usuario</th>
                 		<th>Queja o sujerencia</th>
