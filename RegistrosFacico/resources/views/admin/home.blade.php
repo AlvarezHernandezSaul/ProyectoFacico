@@ -29,7 +29,7 @@
     
     <div class="d-flex align-items-center justify-content-between">
         <div class="text-center">
-            <h2>Registros de uso de salas de computo FaCiCo</h2>
+            <h2>Registros de uso de salas de cómputo FaCiCo</h2>
         </div>
         <a href="{{ route('report.generate') }}" style="display: inline-block; width: 0.5cm; height: 1cm; text-align: center; line-height: 1cm; font-size: 1cm; text-decoration: none;" title="Generar Excel">
             <i class="fa-solid fa-file-excel fa-2x" style="color: #0b5014;"></i>
@@ -49,7 +49,7 @@
                 		<th>No. de equipo</th>
                 		<th>Licenciatura</th>
                 		<th>Usuario</th>
-                		<th>Queja o sujerencia</th>
+                		<th>Queja o sugerencia</th>
                 		
             		</tr>
         	</thead>
