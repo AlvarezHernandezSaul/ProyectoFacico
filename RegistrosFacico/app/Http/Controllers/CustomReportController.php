@@ -11,11 +11,11 @@ class CustomReportController extends Controller
     public function generate()
     {
         $registros = Registro::select('nombre', 'cuenta', 'servicio', 'numero_equipo', 'licenciaturas', 'usuario', 'quejas_sugerencias', 'created_at')
-            ->get(); //recopilación de datos 
+            ->get(); // Recopilación de datos
 
-        $fechaActual = now()->format('Y-m-d'); //fecha según el dia 
+        $fechaActual = now()->format('Y-m-d'); // Fecha según el día
 
-        $nombreArchivo = 'Registros_' . $fechaActual . '.xlsx'; //Concatenación nombre-fecha
+        $nombreArchivo = 'Registros_' . $fechaActual . '.xlsx'; // Concatenación nombre-fecha
 
         return Excel::download(new RegistroExport($registros), $nombreArchivo);
     }
