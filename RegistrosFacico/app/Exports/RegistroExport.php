@@ -33,6 +33,7 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     public function headings(): array
     {
         return [
+            'Fecha de Creación',
             'Nombre',
             'Cuenta',
             'Servicio',
@@ -40,7 +41,6 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
             'Licenciaturas',
             'Usuario',
             'Quejas y Sugerencias',
-            'Fecha de Creación',
         ];
     }
 

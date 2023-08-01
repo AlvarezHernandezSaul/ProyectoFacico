@@ -69,6 +69,7 @@
                   <option value="Educación">Educación</option>
                   <option value="Trabajo Social">Trabajo Social</option>
                   <option value="Cultura Física y Deporte">Cultura Física y Deporte</option>
+                  <option value="Externo">Externo</option>
                 </select>
               </div>
         </div>
