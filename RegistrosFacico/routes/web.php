@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\CustomReportController;
+use App\Http\Controllers\DeleteRegistController;
 
 
 // Ruta de inicio (redirige a la página de registro)
@@ -39,3 +40,5 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 
 // Ruta para generar el reporte
 Route::get('/generar-reporte', [CustomReportController::class, 'generate'])->name('report.generate');
+// Ruta para eliminar los registros
+Route::delete('/delete-registros', [DeleteRegistController::class, 'delete'])->name('delete.registros');

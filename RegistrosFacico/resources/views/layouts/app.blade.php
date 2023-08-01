@@ -62,7 +62,7 @@
 <script src="{{asset('js/jquery-3.3.1.js') }}"></script>
 {{-- Auto ajuste cuadro quejas y sugerencias  --}}
 <script>
-    const textarea = document.getElementById('quejas-sugerencias');
+    const textarea = document.getElementById('quejas_sugerencias');
   
     textarea.addEventListener('input', () => {
       // Reiniciar la altura del textarea para obtener la altura de contenido real
@@ -75,7 +75,7 @@
   {{-- Auto recarga de pagina despues de dar enviar --}}
 
 <!-- Cuadro captura No. eq. computo -->
-<script>
+<script> 
     const opcionesSelect = document.getElementById('servicio');
     const cuadroTextoDiv = document.getElementById('n equipo');
   

@@ -31,9 +31,25 @@
         <div class="text-center">
             <h2>Registros de uso de salas de cómputo FaCiCo</h2>
         </div>
-        <a href="{{ route('report.generate') }}" style="display: inline-block; width: 0.5cm; height: 1cm; text-align: center; line-height: 1cm; font-size: 1cm; text-decoration: none;" title="Generar Excel">
-            <i class="fa-solid fa-file-excel fa-2x" style="color: #0b5014;"></i>
-        </a>
+    <div>
+        <div style="display: flex; align-items: center;">
+            <form action="{{ route('delete.registros') }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar todos los registros?')" style="margin-right: 0.5cm;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" style="background: none; border: none;">
+                    <i class="fa-regular fa-trash-can fa-3x" style="color: #ff0000;"></i>
+                    <p style="margin-top: 0; font-size: 0.5cm; font-weight: bold;">Borrar Registros</p>
+                </button>
+            </form>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <a href="{{ route('report.generate') }}" title="Generar Excel" style="text-align: center; margin-left: 0.5cm;">
+                    <i class="fa-solid fa-file-excel fa-3x" style="color: #0b5014;"></i>
+                </a>
+                <p style="margin-top: 0; font-size: 0.5cm; font-weight: bold;">Generar Excel</p>
+            </div>
+        </div>
+        
+    </div>  
     </div>
     
     

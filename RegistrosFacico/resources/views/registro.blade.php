@@ -25,7 +25,7 @@
 </div>
 
     <div class="d-flex flex-column flex-md-row justify-content-between registro align-items-md-center">
-        <p class="container fs-6 fw-bold text-center my-2 my-md-0"> REGISTRO DE SALAS DE COMPUTO </p>
+        <p class="container fs-6 fw-bold text-center my-2 my-md-0"> REGISTRO DE SALAS DE CÓMPUTO </p>
         <a class="btn text-white mt-2 mt-md-0" href="{{route('login.index')}}" style="background-color: #2d5135;">Iniciar Sesión</a>
     </div>
     <div><div class="linea"></div></div>
@@ -93,7 +93,7 @@
         <br>
         <!-- Button trigger modal -->
 <div class="col-12 text-center">
-    <button type="button" class="btn text-light fs-4" style="background-color: #2d5135;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn text-light fs-1" style="background-color: #2d5135;" data-bs-toggle="modal" data-bs-target="#exampleModal">
         REGISTRARSE
       </button>
      </div> 
