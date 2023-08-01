@@ -22,11 +22,13 @@
 <div class="linea"> </div>
 @include('layouts.checking')
 <div class="linea"></div>
+<p><a class="btn text-white mt-2 mt-md-0 fw-bold" href="{{route('home')}}" style="background-color: #03a70a; ">Registrar nuevo usuario</a></p>
+
 </div>
 <br><br>
 
 <div class="container">
-    
+
     <div class="d-flex align-items-center justify-content-between">
         <div class="text-center">
             <h2>Registros de uso de salas de cómputo FaCiCo</h2>
@@ -57,7 +59,7 @@
     <!-- tabla -->
     <table class="table table-bordered border-dark" >
         	<thead>
-            		<tr>
+            		<tr style='background-color: #b9b8b8; '>
                 		
                 		<th>Nombre</th>
                 		<th>No. de cuenta</th>
