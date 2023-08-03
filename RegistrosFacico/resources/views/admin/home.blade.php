@@ -35,14 +35,6 @@
         </div>
     <div>
         <div style="display: flex; align-items: center;">
-            <form action="{{ route('delete.registros') }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar todos los registros?')" style="margin-right: 0.5cm;">
-                @csrf
-                @method('DELETE')
-                <button type="submit" style="background: none; border: none;">
-                    <i class="fa-regular fa-trash-can fa-3x" style="color: #ff0000;"></i>
-                    <p style="margin-top: 0; font-size: 0.5cm; font-weight: bold;">Borrar Registros</p>
-                </button>
-            </form>
             <div style="display: flex; flex-direction: column; align-items: center;">
                 <a href="{{ route('report.generate') }}" title="Generar Excel" style="text-align: center; margin-left: 0.5cm;">
                     <i class="fa-solid fa-file-excel fa-3x" style="color: #0b5014;"></i>
@@ -60,7 +52,7 @@
     <table class="table table-bordered border-dark" >
         	<thead>
             		<tr style='background-color: #b9b8b8; '>
-                		
+                		<th></th>
                 		<th>Nombre</th>
                 		<th>No. de cuenta</th>
                 		<th>Servicio</th>
@@ -74,7 +66,13 @@
         	<tbody>
             	@foreach( $registro as $reg)
             		<tr>
-                		
+                        <td>
+                            <form action="{{ route('destroy', $reg->id) }}" class="d-inline formulario-eliminar" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger m-6"><i class="fa fa-trash me-2"></i></button>
+                            </form>
+                        </td>
                 		<td>{{ $reg->nombre }}</td>
                 		<td>{{ $reg->cuenta }}</td>
                 		<td>{{ $reg->servicio }}</td>

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Registro extends Model
 {
     use HasFactory;
-
+    protected $table = 'registros';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'nombre',
         'cuenta',

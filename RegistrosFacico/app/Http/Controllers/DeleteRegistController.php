@@ -22,4 +22,19 @@ class DeleteRegistController extends Controller
         // Redirige a la ruta deseada después de eliminar los registros
         return redirect()->route('home')->with('success', 'Registros eliminados exitosamente.');
     }
+
+
+    // forma para eliminar registros de forma idividual
+    public function destroy($id)
+    {
+        
+        $registros = Registro::find($id);
+
+        if ($registros) {
+            $registros->delete();
+            return redirect()->route('home')->with('eliminar','Ok');
+        } else {
+            return redirect()->route('home');
+        }
+    }
 }
