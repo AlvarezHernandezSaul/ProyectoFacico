@@ -22,6 +22,6 @@ class AdminAuth
         return $next($request);
         }
     }
-        return redirect()->to('/home');
+        return redirect()->to('/');
     }
 }

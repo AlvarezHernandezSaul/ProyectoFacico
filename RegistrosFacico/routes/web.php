@@ -43,5 +43,7 @@ Route::delete('/delete-registros', [DeleteRegistController::class, 'delete'])->n
 Route::delete('/destroy/{id}', [DeleteRegistController::class, 'destroy'])->name('destroy');
 
 //Roles de usuario
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/admin', [AdminController::class, 'admin'])
+->middleware('auth.admin')
+->name('admin');
 Route::get('/user', [UserController::class, 'user'])->name('user');
