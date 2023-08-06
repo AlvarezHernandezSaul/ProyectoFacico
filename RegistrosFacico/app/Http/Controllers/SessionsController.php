@@ -15,9 +15,15 @@ class SessionsController extends Controller
             return back()->withErrors([
             'message' => 'Correo o contraseña inconrrectos, intente de nuevo'
             ]);
+        } else {
+            if (auth()->user()->role == 'admin'){
+                return redirect()-> route ('admin');
+            }else {
+                    return redirect()->to ('/user');
+                }
+            }
+            
         }
-    return redirect()-> to('/home');
-    }
     public function destroy(){
 
         auth()->logout();

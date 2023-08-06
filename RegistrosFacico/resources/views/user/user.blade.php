@@ -22,8 +22,7 @@
 <div class="linea"> </div>
 @include('layouts.checking')
 <div class="linea"></div>
-<p><a class="btn text-white mt-2 mt-md-0 fw-bold" href="{{route('register.index')}}" style="background-color: #03a70a; ">Registrar nuevo usuario</a></p>
-
+<br>
 </div>
 
 
@@ -47,12 +46,11 @@
     </div>
     
     
-    <br>
+    <br><br>
     <!-- tabla -->
     <table class="table table-bordered border-dark" >
         	<thead>
             		<tr style='background-color: #b9b8b8; '>
-                		<th></th>
                 		<th>Nombre</th>
                 		<th>No. de cuenta</th>
                 		<th>Servicio</th>
@@ -66,13 +64,6 @@
         	<tbody>
             	@foreach( $registro as $reg)
             		<tr>
-                        <td>
-                            <form action="{{ route('destroy', $reg->id) }}" class="d-inline formulario-eliminar" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger m-6"><i class="fa fa-trash me-2"></i></button>
-                            </form>
-                        </td>
                 		<td>{{ $reg->nombre }}</td>
                 		<td>{{ $reg->cuenta }}</td>
                 		<td>{{ $reg->servicio }}</td>

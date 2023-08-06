@@ -9,7 +9,7 @@ class DeleteRegistController extends Controller
 {
     public function index()
     {
-        // Aquí puedes agregar la lógica para mostrar los registros en la vista
+        // lógica para mostrar los registros en la vista
         $registros = Registro::all();
         return view('home', compact('registros'));
     }

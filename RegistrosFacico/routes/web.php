@@ -6,12 +6,12 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\CustomReportController;
 use App\Http\Controllers\DeleteRegistController;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use GuzzleHttp\Middleware;
 
 // Ruta de inicio (redirige a la página de registro)
-Route::get('/', function () {
-    return redirect()->route('registro');
-});
+Route::get('/', function () { return redirect()->route('registro');});
 
 // Ruta para mostrar el formulario de registro
 Route::get('/registro', [RegistroController::class, 'create'])->name('registro');
@@ -20,9 +20,7 @@ Route::get('/registro', [RegistroController::class, 'create'])->name('registro')
 Route::post('/registro', [RegistroController::class, 'store'])->name('guardar.datos');
 
 // Ruta para acceder al formulario de registro desde otro lugar (si es necesario)
-Route::get('/registro/registro', function () {
-    return view('registro');
-})->name('registroreg');
+Route::get('/registro/registro', function () { return view('registro');})->name('registroreg');
 
 // Rutas de inicio de sesión y registro (se accede a través de botones en la vista)
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login.index');
@@ -43,3 +41,7 @@ Route::get('/generar-reporte', [CustomReportController::class, 'generate'])->nam
 // Ruta para eliminar los registros
 Route::delete('/delete-registros', [DeleteRegistController::class, 'delete'])->name('delete.registros');
 Route::delete('/destroy/{id}', [DeleteRegistController::class, 'destroy'])->name('destroy');
+
+//Roles de usuario
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/user', [UserController::class, 'user'])->name('user');
