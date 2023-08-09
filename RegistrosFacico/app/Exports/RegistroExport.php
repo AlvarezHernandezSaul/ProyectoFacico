@@ -8,7 +8,6 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
-use Carbon\Carbon;
 
 class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
 {
@@ -21,13 +20,7 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
 
     public function collection()
     {
-        // Transformar el campo 'created_at' a solo la fecha en el formato deseado
-        $transformedRegistros = $this->registros->map(function ($registro) {
-            $registro->created_at = Carbon::parse($registro->created_at)->format('Y-m-d');
-            return $registro;
-        });
-
-        return $transformedRegistros;
+        return $this->registros;
     }
 
     public function headings(): array

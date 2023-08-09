@@ -60,6 +60,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <script src="{{asset('js/jquery-3.3.1.js') }}"></script>
+
 {{-- Auto ajuste cuadro quejas y sugerencias  --}}
 <script>
     const textarea = document.getElementById('quejas_sugerencias');
@@ -102,6 +103,40 @@
             document.getElementById("errorMessage").style.display = "none";
         }
     }
+</script>
+
+
+<!--Filtado de reportes -->
+<script>
+  document.getElementById('filterSubmit').addEventListener('click', function() {
+      var startDate = document.getElementById('startDate').value;
+      var endDate = document.getElementById('endDate').value;
+      var yearRange = document.getElementById('yearRange').value;
+
+      // Envía los valores utilizando AJAX
+      $.ajax({
+          type: 'GET',
+          url: '{{ route("report.generate") }}', // Cambia esto por la ruta correcta
+          data: {
+              startDate: startDate,
+              endDate: endDate,
+              yearRange: yearRange
+          },
+          success: function(data) {
+              // Puede que desees manejar la respuesta del servidor aquí
+          },
+          error: function(error) {
+              // Maneja los errores aquí
+          }
+      });
+  });
+</script>
+
+{{-- Close Modal --}}
+<script>
+    document.getElementById('closeFilterModal').addEventListener('click', function () {
+        $('#filterModal').modal('hide');
+    });
 </script>
 
 </html>

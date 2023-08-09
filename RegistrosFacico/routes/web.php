@@ -37,7 +37,8 @@ Route::get('/register', [RegisterController::class, 'create'])->name('register.i
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 // Ruta para generar el reporte
-Route::get('/generar-reporte', [CustomReportController::class, 'generate'])->name('report.generate');
+Route::post('/generar-reporte', [CustomReportController::class, 'generate'])->name('report.generate');
+
 // Ruta para eliminar los registros
 Route::delete('/delete-registros', [DeleteRegistController::class, 'delete'])->name('delete.registros');
 Route::delete('/destroy/{id}', [DeleteRegistController::class, 'destroy'])->name('destroy');
