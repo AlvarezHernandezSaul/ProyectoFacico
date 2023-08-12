@@ -10,6 +10,12 @@ use Carbon\Carbon;
 
 class CustomReportController extends Controller
 {
+    /**
+     * Genera y descarga un informe personalizado en formato Excel.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse|\Illuminate\Http\RedirectResponse
+     */
     public function generate(Request $request)
     {
         $semester = $request->input('semester'); // Obtener el valor del semestre del formulario
@@ -42,6 +48,7 @@ class CustomReportController extends Controller
             }
     
             if ($startDate && $endDate) {
+                // Filtrar registros basados en las fechas y seleccionar las columnas requeridas
                 $registros = Registro::where('created_at', '>=', $startDate)
                     ->where('created_at', '<=', $endDate)
                     ->select('created_at', 'nombre', 'cuenta', 'servicio', 'numero_equipo', 'licenciaturas', 'usuario', 'quejas_sugerencias')
@@ -50,6 +57,7 @@ class CustomReportController extends Controller
                 $fechaActual = now()->format('Y-m-d');
                 $nombreArchivo = 'Registros_' . $fechaActual . '.xlsx';
     
+                // Descargar el archivo Excel usando el exportador 'RegistroExport'
                 return Excel::download(new RegistroExport($registros), $nombreArchivo);
             }
         }

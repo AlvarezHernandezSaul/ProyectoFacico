@@ -13,16 +13,31 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
 {
     protected $registros;
 
+    /**
+     * Crea una nueva instancia del exportador de registros.
+     *
+     * @param \Illuminate\Support\Collection $registros
+     */
     public function __construct(Collection $registros)
     {
         $this->registros = $registros;
     }
 
+    /**
+     * Devuelve la colección de registros para exportar.
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
         return $this->registros;
     }
 
+    /**
+     * Define los encabezados de las columnas del archivo exportado.
+     *
+     * @return array
+     */
     public function headings(): array
     {
         return [
@@ -37,6 +52,12 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
         ];
     }
 
+    /**
+     * Aplica estilos al archivo exportado, como bordes y colores de fondo.
+     *
+     * @param \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet $sheet
+     * @return array
+     */
     public function styles(Worksheet $sheet)
     {
         $lastRow = $this->registros->count() + 1;
@@ -51,22 +72,22 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
             ],
         ];
 
-        // Set the background color for the headers (first row)
+        // Estilo para el fondo y el texto de las cabeceras (primera fila)
         $headerStyle = [
             'fill' => [
                 'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                 'startColor' => [
-                    'argb' => '545454', // Gray color code
+                    'argb' => '545454', // Código de color gris
                 ],
             ],
             'font' => [
                 'bold' => true,
-                'color' => ['argb' => 'FFFFFF'], // Font color will be white (FFFFFF)
+                'color' => ['argb' => 'FFFFFF'], // El color del texto será blanco (FFFFFF)
             ],
         ];
 
-        $sheet->getStyle('A1:H1')->applyFromArray($headerStyle); // Apply the style to the headers
-        $sheet->getStyle($tableRange)->applyFromArray($styleArray); // Apply borders
+        $sheet->getStyle('A1:H1')->applyFromArray($headerStyle); // Aplica el estilo a las cabeceras
+        $sheet->getStyle($tableRange)->applyFromArray($styleArray); // Aplica los bordes
 
         return [
             1 => ['font' => ['bold' => true]],

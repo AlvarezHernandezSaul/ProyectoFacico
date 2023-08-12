@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Los atributos que se pueden asignar masivamente.
      *
      * @var array<int, string>
      */
@@ -21,10 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        ];
+    ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Los atributos que deben estar ocultos para la serialización.
      *
      * @var array<int, string>
      */
@@ -34,7 +34,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
+     * Los atributos que deben ser transformados.
      *
      * @var array<string, string>
      */
@@ -42,8 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-public function setPasswordAttribute($password) {
-    $this->attributes['password'] = bcrypt($password);
-}
-
+    /**
+     * Establece la contraseña del usuario utilizando bcrypt.
+     *
+     * @param string $password
+     * @return void
+     */
+    public function setPasswordAttribute($password) {
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

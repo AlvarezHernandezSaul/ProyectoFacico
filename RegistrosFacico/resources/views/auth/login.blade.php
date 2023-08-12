@@ -9,6 +9,7 @@
   <title>Login</title>
 </head>
 <body>
+  <!-- Encabezado -->
   <header class="header-desktop" style="background-color: #2d5135; width: 100%; padding: 0;">
     <nav class="container-fluid" style="padding: 0;">
         <center>
@@ -19,22 +20,26 @@
 <div>
     <div class="linea"></div>
 </div>
+
+<!-- Inclusión del contenido de 'layouts.checking' -->
 @include('layouts.checking')
 
 <div>
     <div class="linea"></div>
 </div>
+
+<!-- Formulario de Inicio de Sesión -->
 <div class="container col-md-5 border-1 rounded-3">
-  <form class="row g-1" method="POST" >
+  <form class="row g-1" method="POST">
     @csrf
 
     <div class="col-md-8 offset-md-2 border-dark"> 
         <label for="email" class="form-label fw-bold">Email </label>
-        <input type="email" class="form-control border-dark" placeholder="ingrese su correo electronico" id="email" name="email">
+        <input type="email" class="form-control border-dark" placeholder="Ingrese su correo electrónico" id="email" name="email">
     </div>
     <div class="col-md-8 offset-md-2">
         <label for="password" class="form-label fw-bold">Contraseña</label>
-        <input type="password" class="form-control border-dark" id="password" name="password" placeholder="contraseña de 8 digitos">
+        <input type="password" class="form-control border-dark" id="password" name="password" placeholder="Contraseña de 8 dígitos">
     </div>
     @error('message')
     <p class="border border-danger rounded-3 bg-danger col-md-8 offset-md-2"> *Error, correo y/o contraseña incorrectos</p>
@@ -44,10 +49,9 @@
         <button class="btn text-light w-100" style="background-color: #2d5135;" type="submit">Entrar</button>
     </div>
 </form>
-
 </div>
 
-<!-- footer -->
+<!-- Pie de página -->
 <footer class="mt-auto">
     <div class="row">
         <div class="col-md-12">
@@ -59,7 +63,7 @@
         </div>
     </div>
 </footer>
-<!-- end footer -->
+<!-- Fin del pie de página -->
 
 </body>
 </html>

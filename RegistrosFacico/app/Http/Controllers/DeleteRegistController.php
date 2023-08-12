@@ -7,33 +7,51 @@ use Illuminate\Http\Request;
 
 class DeleteRegistController extends Controller
 {
+    /**
+     * Muestra los registros en la vista.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
     public function index()
     {
-        // lógica para mostrar los registros en la vista
+        // Obtener todos los registros de la tabla "registros"
         $registros = Registro::all();
+        
+        // Pasar los registros a la vista "home" utilizando la función compact()
         return view('home', compact('registros'));
     }
 
+    /**
+     * Elimina todos los registros de la tabla "registros".
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete()
     {
-        // Lógica para eliminar todos los registros de la tabla "registros"
+        // Eliminar todos los registros de la tabla "registros"
         Registro::truncate();
 
-        // Redirige a la ruta deseada después de eliminar los registros
+        // Redirigir a la ruta deseada después de eliminar los registros
         return redirect()->route('home')->with('success', 'Registros eliminados exitosamente.');
     }
 
-
-    // forma para eliminar registros de forma idividual
+    /**
+     * Elimina un registro individualmente por su ID.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
-        
-        $registros = Registro::find($id);
+        // Buscar el registro por su ID
+        $registro = Registro::find($id);
 
-        if ($registros) {
-            $registros->delete();
-            return redirect()->route('home')->with('eliminar','Ok');
+        if ($registro) {
+            // Eliminar el registro si se encuentra
+            $registro->delete();
+            return redirect()->route('home')->with('eliminar', 'Ok');
         } else {
+            // Redirigir a la ruta "home" si no se encuentra el registro
             return redirect()->route('home');
         }
     }
