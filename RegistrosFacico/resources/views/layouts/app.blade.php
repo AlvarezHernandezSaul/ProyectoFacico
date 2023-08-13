@@ -69,15 +69,6 @@
     });
 </script>
 
-<!-- Auto recarga de página después de enviar el formulario -->
-<script>
-    window.onload = function () {
-        // Recarga la página después de un tiempo (3000 ms = 3 segundos)
-        setTimeout(function(){
-            location.reload();
-        }, 3000);
-    }
-</script>
 
 <!-- Cuadro de captura No. eq. computo -->
 <script>

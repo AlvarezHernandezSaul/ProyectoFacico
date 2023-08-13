@@ -1,19 +1,17 @@
 <?php
-
 namespace App\Http\Controllers;
 
+// Importar las clases y dependencias necesarias
 use Illuminate\Http\Request;
 use App\Models\Registro;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class RegistroController extends Controller
 {
-    /**
-     * Muestra todos los registros en la vista de administrador.
-     *
-     * @return \Illuminate\Contracts\View\View
-     */
+    // Método para mostrar todos los registros en la vista de administrador
     public function index()
-    {   
+    {
         // Obtener todos los registros utilizando el modelo "Registro"
         $registro = Registro::all();
 
@@ -21,23 +19,14 @@ class RegistroController extends Controller
         return view('admin.home', compact('registro'));
     }
 
-    /**
-     * Muestra el formulario para crear un nuevo registro.
-     *
-     * @return \Illuminate\Contracts\View\View
-     */
+    // Método para mostrar el formulario de creación de registro
     public function create()
     {
         // Mostrar la vista "registro" para el formulario de creación de registro
         return view('registro');
-    }   
+    }
 
-    /**
-     * Almacena un nuevo registro en la base de datos.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
+    // Método para almacenar un nuevo registro en la base de datos
     public function store(Request $request)
     {
         // Validar los campos del formulario de registro
@@ -52,6 +41,9 @@ class RegistroController extends Controller
         ]);
 
         try {
+            // Obtener la hora actual y formatearla
+            $horaRegistro = Carbon::now()->format('H:i:s');
+
             // Crear un nuevo registro en la base de datos utilizando el modelo "Registro"
             Registro::create([
                 'nombre' => $request->nombre,
@@ -61,6 +53,7 @@ class RegistroController extends Controller
                 'licenciaturas' => $request->licenciaturas,
                 'usuario' => $request->usuario, 
                 'quejas_sugerencias' => $request->quejas_sugerencias,
+                'hora_registro' => $horaRegistro,
             ]);
 
             // Redirigir a la ruta 'registroreg' con un mensaje de éxito

@@ -22,6 +22,7 @@ class CreateRegistrosTable extends Migration
             $table->string('licenciaturas');
             $table->string('usuario');
             $table->string('quejas_sugerencias')->nullable();
+            $table->time('hora_registro')->nullable();
             $table->timestamps();
         });
     }

@@ -50,10 +50,10 @@ class CustomReportController extends Controller
             if ($startDate && $endDate) {
                 // Filtrar registros basados en las fechas y seleccionar las columnas requeridas
                 $registros = Registro::where('created_at', '>=', $startDate)
-                    ->where('created_at', '<=', $endDate)
-                    ->select('created_at', 'nombre', 'cuenta', 'servicio', 'numero_equipo', 'licenciaturas', 'usuario', 'quejas_sugerencias')
-                    ->get();
-    
+                ->where('created_at', '<=', $endDate)
+                ->selectRaw('DATE(created_at) as fecha, hora_registro, nombre, cuenta, servicio, numero_equipo, licenciaturas, usuario, quejas_sugerencias')
+                ->get();
+        
                 $fechaActual = now()->format('Y-m-d');
                 $nombreArchivo = 'Registros_' . $fechaActual . '.xlsx';
     

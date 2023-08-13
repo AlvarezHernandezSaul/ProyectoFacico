@@ -33,7 +33,7 @@
 <br>
 
 <!-- Formulario de registro -->
-<form class="container" method="POST" action="{{ route('guardar.datos') }}">
+<form class="container"  method="POST" action="{{ route('guardar.datos') }}">
     @csrf
 
     <!-- Campos de nombre y número de cuenta -->
@@ -127,7 +127,7 @@
                     Recuerda que tu registro tiene una duración de 3 horas como máximo para uso de los equipos de cómputo. Para finalizar su registro, presione ACEPTAR. Buen día.
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn text-light" style="background-color: #2d5135;" data-bs-dismiss="modal">ACEPTAR</button>
+                    <button type="submit" class="btn text-light" style="background-color: #2d5135;" data-bs-dismiss="modal" onclick="location.reload()">ACEPTAR</button>
                 </div>
             </div>
         </div>

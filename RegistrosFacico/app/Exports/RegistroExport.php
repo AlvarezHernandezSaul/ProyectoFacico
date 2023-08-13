@@ -41,7 +41,8 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     public function headings(): array
     {
         return [
-            'Fecha de Creación',
+            'Fecha de Registro',
+            'Hora de Registro', 
             'Nombre',
             'Cuenta',
             'Servicio',
@@ -61,7 +62,7 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
     public function styles(Worksheet $sheet)
     {
         $lastRow = $this->registros->count() + 1;
-        $tableRange = 'A1:H' . $lastRow;
+        $tableRange = 'A1:I' . $lastRow;
 
         $styleArray = [
             'borders' => [
@@ -86,7 +87,7 @@ class RegistroExport implements FromCollection, WithHeadings, ShouldAutoSize, Wi
             ],
         ];
 
-        $sheet->getStyle('A1:H1')->applyFromArray($headerStyle); // Aplica el estilo a las cabeceras
+        $sheet->getStyle('A1:I1')->applyFromArray($headerStyle); // Aplica el estilo a las cabeceras
         $sheet->getStyle($tableRange)->applyFromArray($styleArray); // Aplica los bordes
 
         return [

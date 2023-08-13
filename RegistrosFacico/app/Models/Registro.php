@@ -25,5 +25,7 @@ class Registro extends Model
         'licenciaturas',
         'usuario',
         'quejas_sugerencias',
+        'hora_registro',
+        
     ];
 }

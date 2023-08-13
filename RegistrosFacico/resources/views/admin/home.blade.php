@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
-<!-- Extiende la plantilla 'layouts.app' para la página de registro de uso de salas de cómputo FaCiCo -->
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FaCiCo</title>
+    <!-- Agrega aquí tus enlaces a hojas de estilo CSS si es necesario -->
 </head>
 <body>
     <!-- HEADER DESKTOP -->
@@ -20,12 +18,13 @@
         </nav>
     </header>
     <!-- END HEADER DESKTOP -->
+    
     <div>
         <div class="linea"> </div>
         @include('layouts.checking')
         <div class="linea"></div>
         <br>
-        <div style="display: flex; align-items: center;">
+        <div style="display: flex; align-items: center;" class="container">
             <a class="btn text-white " href="{{ route('register.index') }}" style="background-color: #03a70a;">
                 <i class="fa-solid fa-user-plus" style="font-size: 24px;"></i>
                 <p class="mt-0 mb-0 fw-bold ml-2">Agregar usuario</p>
@@ -40,14 +39,14 @@
             </div>
             <div>
                 <div style="display: flex; align-items: center;">
-                    <!-- Agrega el botón para abrir el modal -->
+                    <!-- Botón para abrir el modal de filtrado -->
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <a href="#" title="Generar Excel" style="text-align: center; margin-left: 0.5cm;" data-bs-toggle="modal" data-bs-target="#filterModal">
+                            <!-- Icono de Excel -->
                             <i class="fa-solid fa-file-excel fa-3x" style="color: #0b5014;" data-bs-toggle="modal" data-bs-target="#filterModal"></i>
                         </a>    
                         <p style="margin-top: 0; font-size: 0.5cm; font-weight: bold;">Generar Excel</p>
                     </div>
-
                     <!-- Modal de filtrado -->
                     <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
                         <div class="modal-dialog"  role="document">
@@ -72,9 +71,10 @@
                                         </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn text-white" id="filterSubmit" style="background-color: #03a70a;">Generar Reporte</button>
+                                    <button type="submit" class="btn text-white" id="filterSubmit" style="background-color: #03a70a;" >Generar Reporte</button>
                                 </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,10 +120,10 @@
         <!-- tabla -->
     </div>
     <!-- footer -->
-    <footer class="mt-auto">
+    <footer class="footer mt-auto" style="background-color: #2d5135; width: 100%;">
         <div class="row">
             <div class="col-md-12">
-                <div class="footer-content" style="background-color: #2d5135;">
+                <div class="footer-content">
                     <center>
                         <img src="{{ asset('img/logofacico.png') }}" alt="uaem" width="316px" height="97px">
                     </center>
